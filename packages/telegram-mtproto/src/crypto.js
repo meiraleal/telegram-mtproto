@@ -8,6 +8,7 @@ import { immediate } from 'mtproto-shared'
 import { convertToUint8Array, sha1HashSync, sha256HashSync,
   aesEncryptSync, aesDecryptSync, convertToByteArray, convertToArrayBuffer,
   pqPrimeFactorization, bytesModPow } from './bin'
+import PseudoWorker from 'pseudo-worker';
 
 const convertIfArray = (val) => Array.isArray(val)
   ? convertToUint8Array(val)
@@ -49,7 +50,7 @@ function initWorker() {
   let TmpWorker, tmpWorker
   try {
     //$FlowIssue
-    TmpWorker = require('worker-loader?inline&fallback=false!./worker.js')
+    TmpWorker = PseudoWorker('./worker.js');
   } catch (err) {
     console.error('webWorker disabled', err)
     webWorker = false

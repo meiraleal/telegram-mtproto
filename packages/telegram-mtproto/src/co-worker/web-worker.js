@@ -5,7 +5,7 @@ import Logger from 'mtproto-logger'
 const log = Logger`web-worker`
 
 import type { TasksType, WorkerType, Task, TaskResult } from './index.h'
-
+import PseudoWorker from 'pseudo-worker';
 
 export default class Webworker {
   static of() {
@@ -87,7 +87,7 @@ function getWorker(): WorkerType {
   let WorkerInstance
   try {
     //$FlowIssue
-    WorkerInstance = require('worker-loader?inline&fallback=false!./worker.js')
+    WorkerInstance = PseudoWorker('./worker.js')
   } catch (err) {
     console.error(err)
     WorkerInstance = require('./worker.js')

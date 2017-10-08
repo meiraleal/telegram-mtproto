@@ -33,6 +33,7 @@
   "author": "Zero Bias",
   "dependencies": {
     "@goodmind/node-cryptojs-aes": "^0.5.0",
+    "@safareli/free": "^1.0.0",
     "ajv": "^5.2.2",
     "ajv-keywords": "^2.1.0",
     "apropos": "^0.6.2",
@@ -41,7 +42,6 @@
     "detect-node": "^2.0.3",
     "eventemitter2": "^4.1.2",
     "fluture": "^7.1.2",
-    "@safareli/free": "^1.0.0",
     "folktale": "^2.0.1",
     "immutable": "^4.0.0-rc.2",
     "most": "^1.7.1",
@@ -50,6 +50,7 @@
     "mtproto-shared": "^0.1.8",
     "mtproto-storage-fs": "^0.3.1",
     "pako": "^1.0.6",
+    "pseudo-worker": "^1.1.1",
     "ramda": "^0.24.1",
     "randombytes": "^2.0.5",
     "redux": "^3.7.2",
